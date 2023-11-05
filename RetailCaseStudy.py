@@ -183,8 +183,8 @@ dn['age'] = (np.where(dob_year > curr_year,v6,y6))
 
         #  a. What was the total amount spent for “Electronics” and “Books” product categories
 total = dn.loc[((dn.age >25) & (dn.age <35)) & ((dn.prod_cat=='Books') | (dn.prod_cat=='Electronics'))]['total_amt'].sum()
-print('Total amount earned',total)
+print('Total amount spent for electronics and books',total)
         #  b. What was the total amount spent by these customers between 1st Jan, 2014 to 1st Mar, 2014?
-t_date = Cust_Final[(Cust_Final['tran_date'] > '01-01-2014') & (Cust_Final['tran_date'] < '01-03-2014')]
+t_date = Cust_Final[(Cust_Final['tran_date'] > '01-01-2014') & (Cust_Final['tran_date'] < '01-03-2014') & ((dn.age >25) & (dn.age <35))]
 total_amount = t_date.total_amt.sum()
 print('Total amount spent by the customer - ',total_amount)
