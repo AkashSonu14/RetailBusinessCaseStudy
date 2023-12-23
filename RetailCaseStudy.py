@@ -18,12 +18,12 @@ Cust_Final.to_csv(a, index=False)'''
 
 # 2. Summary Report
 
-#     a. Column names with their data-types
+        #a. Column names with their data-types
 print(Cust_Final.dtypes)
-#     b. Top/Bottom 10 Observations
+    #b. Top/Bottom 10 Observations
 print(Cust_Final.head(10))
 print(Cust_Final.tail(10))
-#     c. Five-number summary for continuous variables (min, Q1, median, Q3 and max)
+    #c. Five-number summary for continuous variables (min, Q1, median, Q3 and max)
 Data_min = Cust_Final['total_amt'].min()
 Data_max = Cust_Final['total_amt'].max()
 Data_q1  = np.percentile(Cust_Final.total_amt,25)
@@ -34,7 +34,7 @@ print('Maximum = ',Data_max)
 print('Median = ',median)
 print('Q1 = ',Data_q1)
 print('Q3 = ',Data_q3)
-#     d. Frequency tables for all the categorical variables
+    #d. Frequency tables for all the categorical variables
 freq_table1 = pd.crosstab(index = Cust_Final['Gender'],columns = Cust_Final['Store_type'])
 freq_table1.columns = ['TeleShop','MBR','e-shop','Flagshipstore']
 freq_table1.index = ['Male','Female']
